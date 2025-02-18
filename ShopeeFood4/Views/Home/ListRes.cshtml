@@ -1,0 +1,51 @@
+﻿@model IEnumerable<ShopeeFood4.Models.Restaurant>
+
+@{
+    ViewData["Title"] = "Danh sách nhà hàng";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Danh sách nhà hàng</h1>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Tên</th>
+            <th>Mô tả</th>
+            <th>Địa chỉ</th>
+            <th>Số điện thoại</th>
+            <th>Email</th>
+            <th>Trạng thái mở cửa</th>
+            <th>Thao tác</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null)
+        {
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.Name)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Description)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Address)</td>
+                    <td>@Html.DisplayFor(modelItem => item.PhoneNumber)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Email)</td>
+                    <td>@Html.DisplayFor(modelItem => item.OpenStatus)</td>
+                    <td>
+                        <a asp-controller="Home" asp-action="EditRes" asp-route-id="@item.RestaurantId">Sửa</a> |
+                        <a asp-controller="Home" asp-action="DeleteResById" asp-route-id="@item.RestaurantId">Xóa</a>
+                    </td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="7">No data found.</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-action="CreateRes" class="btn btn-primary">Thêm mới nhà hàng</a>

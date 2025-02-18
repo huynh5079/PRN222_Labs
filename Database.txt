@@ -1,0 +1,194 @@
+// db first
+dotnet ef dbcontext scaffold "Server=LAPTOP-433H02QI\NGHUY;Database=ShopeeFoodDB;Trusted_Connection=True;TrustServerCertificate=True;" Microsoft.EntityFrameworkCore.SqlServer -o Models --context-dir Data -c ShopeeFoodContext -f
+
+
+-- Create database
+CREATE DATABASE ShopeeFoodDB;
+USE ShopeeFoodDB;
+
+-- Table: Users
+CREATE TABLE Users (
+    UserID INT PRIMARY KEY IDENTITY(1,1),
+    Username NVARCHAR(50),
+    PasswordHash NVARCHAR(256),
+    Email NVARCHAR(100),
+    PhoneNumber NVARCHAR(20),
+    Address NVARCHAR(200),
+    CreatedAt DATETIME DEFAULT GETDATE(),
+    UpdatedAt DATETIME DEFAULT GETDATE()
+);
+
+-- Table: Restaurants
+CREATE TABLE Restaurants (
+    RestaurantID INT PRIMARY KEY IDENTITY(1,1),
+    Name NVARCHAR(100),
+    Description NVARCHAR(500),
+    Address NVARCHAR(200),
+    PhoneNumber NVARCHAR(20),
+    Email NVARCHAR(100),
+    OpenStatus NVARCHAR(10),
+    CreatedAt DATETIME DEFAULT GETDATE(),
+    UpdatedAt DATETIME DEFAULT GETDATE()
+);
+
+-- Table: MenuItems
+CREATE TABLE MenuItems (
+    MenuItemID INT PRIMARY KEY IDENTITY(1,1),
+    RestaurantID INT FOREIGN KEY REFERENCES Restaurants(RestaurantID),
+    Name NVARCHAR(100),
+    Description NVARCHAR(500),
+    Price DECIMAL(10, 2),
+    AvailabilityStatus NVARCHAR(20),
+    CreatedAt DATETIME DEFAULT GETDATE(),
+    UpdatedAt DATETIME DEFAULT GETDATE()
+);
+
+-- Table: Orders
+CREATE TABLE Orders (
+    OrderID INT PRIMARY KEY IDENTITY(1,1),
+    UserID INT FOREIGN KEY REFERENCES Users(UserID),
+    RestaurantID INT FOREIGN KEY REFERENCES Restaurants(RestaurantID),
+    DeliveryDriverID INT FOREIGN KEY REFERENCES DeliveryDrivers(DeliveryDriverID),
+    TotalPrice DECIMAL(10, 2),
+    OrderStatus NVARCHAR(20),
+    DeliveryAddress NVARCHAR(200),
+    PlacedAt DATETIME DEFAULT GETDATE(),
+    UpdatedAt DATETIME DEFAULT GETDATE()
+);
+
+-- Table: OrderItems
+CREATE TABLE OrderItems (
+    OrderItemID INT PRIMARY KEY IDENTITY(1,1),
+    OrderID INT FOREIGN KEY REFERENCES Orders(OrderID),
+    MenuItemID INT FOREIGN KEY REFERENCES MenuItems(MenuItemID),
+    Quantity INT,
+    Price DECIMAL(10, 2),
+    CreatedAt DATETIME DEFAULT GETDATE(),
+    UpdatedAt DATETIME DEFAULT GETDATE()
+);
+
+-- Table: DeliveryDrivers
+CREATE TABLE DeliveryDrivers (
+    DeliveryDriverID INT PRIMARY KEY IDENTITY(1,1),
+    Name NVARCHAR(100),
+    PhoneNumber NVARCHAR(20),
+    Email NVARCHAR(100),
+    Status NVARCHAR(20),
+    CreatedAt DATETIME DEFAULT GETDATE(),
+    UpdatedAt DATETIME DEFAULT GETDATE()
+);
+
+-- Table: Reviews
+CREATE TABLE Reviews (
+    ReviewID INT PRIMARY KEY IDENTITY(1,1),
+    UserID INT FOREIGN KEY REFERENCES Users(UserID),
+    RestaurantID INT FOREIGN KEY REFERENCES Restaurants(RestaurantID),
+    DeliveryDriverID INT FOREIGN KEY REFERENCES DeliveryDrivers(DeliveryDriverID),
+    Rating INT,
+    Comment NVARCHAR(1000),
+    CreatedAt DATETIME DEFAULT GETDATE(),
+    UpdatedAt DATETIME DEFAULT GETDATE()
+);
+
+-- Table: Administrators
+CREATE TABLE Administrators (
+    AdminID INT PRIMARY KEY IDENTITY(1,1),
+    Username NVARCHAR(50),
+    PasswordHash NVARCHAR(256),
+    Email NVARCHAR(100),
+    PhoneNumber NVARCHAR(20),
+    CreatedAt DATETIME DEFAULT GETDATE(),
+    UpdatedAt DATETIME DEFAULT GETDATE()
+);
+
+-- Table: Transactions
+CREATE TABLE Transactions (
+    TransactionID INT PRIMARY KEY IDENTITY(1,1),
+    OrderID INT FOREIGN KEY REFERENCES Orders(OrderID),
+    PaymentMethod NVARCHAR(50),
+    TransactionStatus NVARCHAR(20),
+    Amount DECIMAL(10, 2),
+    CreatedAt DATETIME DEFAULT GETDATE()
+);
+
+-- Table: Notifications
+CREATE TABLE Notifications (
+    NotificationID INT PRIMARY KEY IDENTITY(1,1),
+    UserID INT FOREIGN KEY REFERENCES Users(UserID),
+    RestaurantID INT FOREIGN KEY REFERENCES Restaurants(RestaurantID),
+    DeliveryDriverID INT FOREIGN KEY REFERENCES DeliveryDrivers(DeliveryDriverID),
+    Message NVARCHAR(1000),
+    CreatedAt DATETIME DEFAULT GETDATE()
+);
+
+-- Table: Logs
+CREATE TABLE Logs (
+    LogID INT PRIMARY KEY IDENTITY(1,1),
+    LogType NVARCHAR(20),
+    Message NVARCHAR(2000),
+    CreatedAt DATETIME DEFAULT GETDATE()
+);
+
+-- Insert random data into Users
+DECLARE @i INT = 20;
+
+WHILE @i > 0
+BEGIN
+    INSERT INTO Users (Username, PasswordHash, Email, PhoneNumber, Address)
+    VALUES (
+        CONVERT(VARCHAR(50), NEWID()),
+        HASHBYTES('SHA2_256', CONVERT(VARCHAR(50), NEWID())),
+        CONVERT(VARCHAR(50), NEWID()) + '@example.com',
+        '1234567890',
+        'Random Address ' + CAST(@i AS NVARCHAR(10))
+    );
+    SET @i = @i - 1;
+END
+
+-- Reset @i
+SET @i = 20;
+
+-- Insert random data into Restaurants
+WHILE @i > 0
+BEGIN
+    INSERT INTO Restaurants (Name, Description, Address, PhoneNumber, Email, OpenStatus)
+    VALUES (
+        'Restaurant ' + CAST(@i AS NVARCHAR(10)),
+        'Description ' + CAST(@i AS NVARCHAR(10)),
+        'Address ' + CAST(@i AS NVARCHAR(10)),
+        '0987654321',
+        CONVERT(VARCHAR(50), NEWID()) + '@restaurant.com',
+        'Open'
+    );
+    SET @i = @i - 1;
+END
+
+-- Reset @i
+SET @i = 20;
+
+-- Insert random data into DeliveryDrivers
+WHILE @i > 0
+BEGIN
+    INSERT INTO DeliveryDrivers (Name, PhoneNumber, Email, Status)
+    VALUES ('Driver ' + CAST(@i AS NVARCHAR(10)), '1122334455', CONVERT(VARCHAR, NEWID()) + '@driver.com', 'Available');
+    SET @i = @i - 1;
+END
+
+-- Reset @i
+SET @i = 20;
+
+-- Insert random data into MenuItems
+WHILE @i > 0
+BEGIN
+    INSERT INTO MenuItems (RestaurantID, Name, Description, Price, AvailabilityStatus)
+    VALUES ((@i % 20) + 1, 'MenuItem ' + CAST(@i AS NVARCHAR(10)), 'Description ' + CAST(@i AS NVARCHAR(10)), (@i * 1.5), 'Available');
+    SET @i = @i - 1;
+END
+
+-- Insert random data into Administrators
+WHILE @i > 0
+BEGIN
+    INSERT INTO Administrators (Username, PasswordHash, Email, PhoneNumber)
+    VALUES (CONVERT(VARCHAR, NEWID()), HASHBYTES('SHA2_256', CONVERT(VARCHAR, NEWID())), CONVERT(VARCHAR, NEWID()) + '@admin.com', '1223344556');
+    SET @i = @i - 1;
+END

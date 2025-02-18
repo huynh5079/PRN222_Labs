@@ -1,0 +1,206 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Code\\CodeVisual\\ShopeeFood4\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{9A6E6B9B-0C1B-48D2-B460-DF85A104EF6C}|ShopeeFood4\\ShopeeFood4.csproj|d:\\code\\codevisual\\shopeefood4\\shopeefood4\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9A6E6B9B-0C1B-48D2-B460-DF85A104EF6C}|ShopeeFood4\\ShopeeFood4.csproj|solutionrelative:shopeefood4\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A6E6B9B-0C1B-48D2-B460-DF85A104EF6C}|ShopeeFood4\\ShopeeFood4.csproj|d:\\code\\codevisual\\shopeefood4\\shopeefood4\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{9A6E6B9B-0C1B-48D2-B460-DF85A104EF6C}|ShopeeFood4\\ShopeeFood4.csproj|solutionrelative:shopeefood4\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A6E6B9B-0C1B-48D2-B460-DF85A104EF6C}|ShopeeFood4\\ShopeeFood4.csproj|d:\\code\\codevisual\\shopeefood4\\shopeefood4\\data\\shopeefoodcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9A6E6B9B-0C1B-48D2-B460-DF85A104EF6C}|ShopeeFood4\\ShopeeFood4.csproj|solutionrelative:shopeefood4\\data\\shopeefoodcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A6E6B9B-0C1B-48D2-B460-DF85A104EF6C}|ShopeeFood4\\ShopeeFood4.csproj|d:\\code\\codevisual\\shopeefood4\\shopeefood4\\testapi.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{9A6E6B9B-0C1B-48D2-B460-DF85A104EF6C}|ShopeeFood4\\ShopeeFood4.csproj|solutionrelative:shopeefood4\\testapi.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A6E6B9B-0C1B-48D2-B460-DF85A104EF6C}|ShopeeFood4\\ShopeeFood4.csproj|d:\\code\\codevisual\\shopeefood4\\shopeefood4\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9A6E6B9B-0C1B-48D2-B460-DF85A104EF6C}|ShopeeFood4\\ShopeeFood4.csproj|solutionrelative:shopeefood4\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A6E6B9B-0C1B-48D2-B460-DF85A104EF6C}|ShopeeFood4\\ShopeeFood4.csproj|d:\\code\\codevisual\\shopeefood4\\shopeefood4\\views\\home\\listres.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9A6E6B9B-0C1B-48D2-B460-DF85A104EF6C}|ShopeeFood4\\ShopeeFood4.csproj|solutionrelative:shopeefood4\\views\\home\\listres.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A6E6B9B-0C1B-48D2-B460-DF85A104EF6C}|ShopeeFood4\\ShopeeFood4.csproj|d:\\code\\codevisual\\shopeefood4\\shopeefood4\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9A6E6B9B-0C1B-48D2-B460-DF85A104EF6C}|ShopeeFood4\\ShopeeFood4.csproj|solutionrelative:shopeefood4\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A6E6B9B-0C1B-48D2-B460-DF85A104EF6C}|ShopeeFood4\\ShopeeFood4.csproj|d:\\code\\codevisual\\shopeefood4\\shopeefood4\\views\\home\\createres.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9A6E6B9B-0C1B-48D2-B460-DF85A104EF6C}|ShopeeFood4\\ShopeeFood4.csproj|solutionrelative:shopeefood4\\views\\home\\createres.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A6E6B9B-0C1B-48D2-B460-DF85A104EF6C}|ShopeeFood4\\ShopeeFood4.csproj|d:\\code\\codevisual\\shopeefood4\\shopeefood4\\controllers\\restaurantcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9A6E6B9B-0C1B-48D2-B460-DF85A104EF6C}|ShopeeFood4\\ShopeeFood4.csproj|solutionrelative:shopeefood4\\controllers\\restaurantcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A6E6B9B-0C1B-48D2-B460-DF85A104EF6C}|ShopeeFood4\\ShopeeFood4.csproj|d:\\code\\codevisual\\shopeefood4\\shopeefood4\\views\\home\\getresbyid.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9A6E6B9B-0C1B-48D2-B460-DF85A104EF6C}|ShopeeFood4\\ShopeeFood4.csproj|solutionrelative:shopeefood4\\views\\home\\getresbyid.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A6E6B9B-0C1B-48D2-B460-DF85A104EF6C}|ShopeeFood4\\ShopeeFood4.csproj|d:\\code\\codevisual\\shopeefood4\\shopeefood4\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{9A6E6B9B-0C1B-48D2-B460-DF85A104EF6C}|ShopeeFood4\\ShopeeFood4.csproj|solutionrelative:shopeefood4\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 7,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ShopeeFoodContext.cs",
+              "DocumentMoniker": "D:\\Code\\CodeVisual\\ShopeeFood4\\ShopeeFood4\\Data\\ShopeeFoodContext.cs",
+              "RelativeDocumentMoniker": "ShopeeFood4\\Data\\ShopeeFoodContext.cs",
+              "ToolTip": "D:\\Code\\CodeVisual\\ShopeeFood4\\ShopeeFood4\\Data\\ShopeeFoodContext.cs",
+              "RelativeToolTip": "ShopeeFood4\\Data\\ShopeeFoodContext.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-18T02:03:36.838Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "TestApi.http",
+              "DocumentMoniker": "D:\\Code\\CodeVisual\\ShopeeFood4\\ShopeeFood4\\TestApi.http",
+              "RelativeDocumentMoniker": "ShopeeFood4\\TestApi.http",
+              "ToolTip": "D:\\Code\\CodeVisual\\ShopeeFood4\\ShopeeFood4\\TestApi.http",
+              "RelativeToolTip": "ShopeeFood4\\TestApi.http",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2025-02-18T01:52:14.845Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "CreateRes.cshtml",
+              "DocumentMoniker": "D:\\Code\\CodeVisual\\ShopeeFood4\\ShopeeFood4\\Views\\Home\\CreateRes.cshtml",
+              "RelativeDocumentMoniker": "ShopeeFood4\\Views\\Home\\CreateRes.cshtml",
+              "ToolTip": "D:\\Code\\CodeVisual\\ShopeeFood4\\ShopeeFood4\\Views\\Home\\CreateRes.cshtml",
+              "RelativeToolTip": "ShopeeFood4\\Views\\Home\\CreateRes.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-18T01:45:28.896Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "GetResById.cshtml",
+              "DocumentMoniker": "D:\\Code\\CodeVisual\\ShopeeFood4\\ShopeeFood4\\Views\\Home\\GetResById.cshtml",
+              "RelativeDocumentMoniker": "ShopeeFood4\\Views\\Home\\GetResById.cshtml",
+              "ToolTip": "D:\\Code\\CodeVisual\\ShopeeFood4\\ShopeeFood4\\Views\\Home\\GetResById.cshtml",
+              "RelativeToolTip": "ShopeeFood4\\Views\\Home\\GetResById.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-18T01:16:13.195Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\Code\\CodeVisual\\ShopeeFood4\\ShopeeFood4\\appsettings.json",
+              "RelativeDocumentMoniker": "ShopeeFood4\\appsettings.json",
+              "ToolTip": "D:\\Code\\CodeVisual\\ShopeeFood4\\ShopeeFood4\\appsettings.json",
+              "RelativeToolTip": "ShopeeFood4\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-02-18T00:33:43.332Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\Code\\CodeVisual\\ShopeeFood4\\ShopeeFood4\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "ShopeeFood4\\Controllers\\HomeController.cs",
+              "ToolTip": "D:\\Code\\CodeVisual\\ShopeeFood4\\ShopeeFood4\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "ShopeeFood4\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAAgwBAAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-13T04:19:07.87Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "D:\\Code\\CodeVisual\\ShopeeFood4\\ShopeeFood4\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "ShopeeFood4\\appsettings.Development.json",
+              "ToolTip": "D:\\Code\\CodeVisual\\ShopeeFood4\\ShopeeFood4\\appsettings.Development.json",
+              "RelativeToolTip": "ShopeeFood4\\appsettings.Development.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-02-13T04:03:23.503Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Code\\CodeVisual\\ShopeeFood4\\ShopeeFood4\\Program.cs",
+              "RelativeDocumentMoniker": "ShopeeFood4\\Program.cs",
+              "ToolTip": "D:\\Code\\CodeVisual\\ShopeeFood4\\ShopeeFood4\\Program.cs",
+              "RelativeToolTip": "ShopeeFood4\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-13T04:02:09.715Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Code\\CodeVisual\\ShopeeFood4\\ShopeeFood4\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "ShopeeFood4\\Views\\Home\\Index.cshtml",
+              "ToolTip": "D:\\Code\\CodeVisual\\ShopeeFood4\\ShopeeFood4\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "ShopeeFood4\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-13T04:00:23.097Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ListRes.cshtml",
+              "DocumentMoniker": "D:\\Code\\CodeVisual\\ShopeeFood4\\ShopeeFood4\\Views\\Home\\ListRes.cshtml",
+              "RelativeDocumentMoniker": "ShopeeFood4\\Views\\Home\\ListRes.cshtml",
+              "ToolTip": "D:\\Code\\CodeVisual\\ShopeeFood4\\ShopeeFood4\\Views\\Home\\ListRes.cshtml",
+              "RelativeToolTip": "ShopeeFood4\\Views\\Home\\ListRes.cshtml",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAAA4AAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-13T03:57:10.148Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "RestaurantController.cs",
+              "DocumentMoniker": "D:\\Code\\CodeVisual\\ShopeeFood4\\ShopeeFood4\\Controllers\\RestaurantController.cs",
+              "RelativeDocumentMoniker": "ShopeeFood4\\Controllers\\RestaurantController.cs",
+              "ToolTip": "D:\\Code\\CodeVisual\\ShopeeFood4\\ShopeeFood4\\Controllers\\RestaurantController.cs",
+              "RelativeToolTip": "ShopeeFood4\\Controllers\\RestaurantController.cs",
+              "ViewState": "AgIAAHQAAAAAAAAAAAAwwHYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-13T03:59:08.181Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

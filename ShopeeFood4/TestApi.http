@@ -1,0 +1,3 @@
+###
+GET http://localhost:5140/api/Home/RestaurantController/Details/5
+###`

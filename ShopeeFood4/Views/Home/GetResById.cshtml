@@ -1,0 +1,43 @@
+﻿@model ShopeeFood4.Models.Restaurant
+
+<h2>Chi tiết nhà hàng</h2>
+
+<div>
+    <h4>@Model.Name</h4>
+    <dl class="dl-horizontal">
+        <dt>
+            Mô tả
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+        <dt>
+            Địa chỉ
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+        <dt>
+            Số điện thoại
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PhoneNumber)
+        </dd>
+        <dt>
+            Email
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt>
+            Trạng thái mở cửa
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.OpenStatus)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="EditRes" asp-route-id="@Model.RestaurantId" class="btn btn-primary">Sửa</a> |
+    <a asp-action="GetAllRes" class="btn btn-secondary">Quay lại</a>
+</div>
