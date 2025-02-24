@@ -1,4 +1,4 @@
-﻿@model IEnumerable<ShopeeFoodWebApp.Models.MenuItem>
+﻿@model IEnumerable<PRN222_Lab5.Models.MenuItem>
 
 @{
     ViewData["Title"] = "Menu";
@@ -11,8 +11,8 @@
         <div>
             <h3>@item.Name</h3>
             <p>@item.Description</p>
-            <p>Price: @item.Price.ToString("C")</p>
-            <button onclick="addToCart(@item.MenuItemID)">Add to Cart</button>
+            <p>Price: @String.Format("{0:C}", item.Price)</p>
+            <button onclick="addToCart(@item.MenuItemId)">Add to Cart</button>
         </div>
     }
 </div>

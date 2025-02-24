@@ -1,4 +1,4 @@
-﻿@model List<ShopeeFoodWebApp.Models.MenuItem>
+﻿@model List<PRN222_Lab5.Models.MenuItem>
 
 @{
     ViewData["Title"] = "Cart";
@@ -22,13 +22,13 @@
             <tr>
                 <td>@item.Name</td>
                 <td>@item.Description</td>
-                <td>@item.Price.ToString("C")</td>
+                <td>@String.Format("{0:C}", item.Price)</td>
                 <td>
                     <input type="number" value="1" min="1" onchange="updateCartTotal()" />
                 </td>
-                <td class="subtotal">@item.Price.ToString("C")</td>
+                <td class="subtotal">@String.Format("{0:C}", item.Price)</td>
                 <td>
-                    <button onclick="removeFromCart(@item.MenuItemID)">Remove</button>
+                    <button onclick="removeFromCart(@item.MenuItemId)">Remove</button>
                 </td>
             </tr>
         }
@@ -52,8 +52,18 @@
         }
 
         function removeFromCart(menuItemId) {
-            // Logic to remove item from cart
-            console.log('Removing item with ID: ' + menuItemId);
+            $.ajax({
+                url: '@Url.Action("RemoveFromCart", "Cart")',
+                type: 'POST',
+                data: { id: menuItemId },
+                success: function () {
+                    // Reload the cart view to reflect the changes
+                    location.reload();
+                },
+                error: function (error) {
+                    alert('Error removing item from cart.');
+                }
+            });
         }
 
         // Initialize cart total on page load
