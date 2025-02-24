@@ -5,7 +5,7 @@
 }
 
 <h2>Your Cart</h2>
-<table class="table">
+<table class="table" style="border: solid #000; max-height: 500px; scroll-behavior:auto">
     <thead>
         <tr>
             <th>Name</th>
@@ -34,8 +34,13 @@
         }
     </tbody>
 </table>
-
-<h3>Total: <span id="cartTotal"></span></h3>
+<div style="display: flex; flex-direction: row; justify-content: space-between">
+    <h3>Total: <span id="cartTotal"></span></h3>    
+    <div style="display: flex; flex-direction: row; ">
+        <button style="width: 100px; height: 30px" onclick="history.back()">Menu</button>
+        <button style="width: 100px; height: 30px" onclick="#">Payment</button>
+    </div>
+</div>
 
 @section Scripts {
     <script>

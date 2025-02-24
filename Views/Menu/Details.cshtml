@@ -3,11 +3,18 @@
 @{
     ViewData["Title"] = "Menu Item Details";
 }
+<div style="background-color:bisque; margin: 15px; border:solid #000; border-radius: 20px; display:flex; align-items:center; justify-content:space-around; width:40%">
+    <div style="width: 30%; padding: 5px">
+        <h2>@Model.Name</h2>
+        <p>@Model.Description</p>
+        <p>Price: @Model.Price</p>
+    </div>
 
-<h2>@Model.Name</h2>
-<p>@Model.Description</p>
-<p>Price: @Model.Price</p>
-<button onclick="addToCart(@Model.MenuItemId)">Add to Cart</button>
+    <div style="width: 10%; padding: 5px">
+        <button style="width: 100px; height: 30px" onclick="addToCart(@Model.MenuItemId)">Add to Cart</button>
+        <button style="width: 100px; height: 30px" onclick="history.back()">Menu</button>
+    </div>
+</div>
 
 @section Scripts {
     <script>
@@ -17,11 +24,34 @@
                 type: 'POST',
                 data: { id: menuItemId },
                 success: function (response) {
-                    alert('Item added to cart!');
+                    showTemporaryAlert('Item added to cart!');
                 },
                 error: function (error) {
-                    alert('Error adding item to cart.');
+                    showTemporaryAlert('Error adding item to cart.');
                 }
+            });
+        }
+
+        function showTemporaryAlert(message) {
+            const alertBox = document.createElement('div');
+            alertBox.textContent = message;
+            alertBox.style.position = 'fixed';
+            alertBox.style.top = '20px';
+            alertBox.style.right = '20px';
+            alertBox.style.padding = '10px';
+            alertBox.style.backgroundColor = '#f8d7da';
+            alertBox.style.border = '1px solid #f5c6cb';
+            alertBox.style.color = '#721c24';
+            alertBox.style.borderRadius = '5px';
+            document.body.appendChild(alertBox);
+
+            setTimeout(() => {
+                alertBox.remove();
+            }, 3000);
+
+            document.addEventListener('click', function handler() {
+                alertBox.remove();
+                document.removeEventListener('click', handler);
             });
         }
     </script>

@@ -4,15 +4,21 @@
     ViewData["Title"] = "Menu";
 }
 
-<h2>Menu</h2>
+<h1>Menu</h1>
 <div>
     @foreach (var item in Model)
     {
-        <div>
-            <h3>@item.Name</h3>
-            <p>@item.Description</p>
-            <p>Price: @String.Format("{0:C}", item.Price)</p>
-            <button onclick="addToCart(@item.MenuItemId)">Add to Cart</button>
+        <div style="background-color:bisque; margin: 15px; border:solid #000; border-radius: 20px; display:flex; align-items:center; justify-content:space-around; width:40%">
+            <div style="width: 30%; padding: 5px">
+                <h3>@item.Name</h3>
+                <p>@item.Description</p>
+                <p><strong>Price: @String.Format("{0:C}", item.Price)</strong></p>
+            </div>
+
+            <div style="width: 10%; padding: 5px">
+                <button style="width: 100px; height: 30px" onclick="addToCart(@item.MenuItemId)">Add to Cart</button>
+                <button style="width: 100px; height: 30px" onclick="itemDetails(@item.MenuItemId)">Details</button>
+            </div>
         </div>
     }
 </div>
@@ -25,12 +31,43 @@
                 type: 'POST',
                 data: { id: menuItemId },
                 success: function (response) {
-                    alert('Item added to cart!');
+                    showTemporaryAlert('Item added to cart!');
                 },
                 error: function (error) {
-                    alert('Error adding item to cart.');
+                    showTemporaryAlert('Error adding item to cart.');
                 }
             });
+        }
+
+        function itemDetails(menuItemId) {
+            window.location.href = '@Url.Action("Details", "Menu")' + '/' + menuItemId;
+        }
+
+        function showTemporaryAlert(message) {
+            const alertBox = document.createElement('div');
+            alertBox.textContent = message;
+            alertBox.style.position = 'fixed';
+            alertBox.style.top = '20px';
+            alertBox.style.right = '20px';
+            alertBox.style.padding = '10px';
+            alertBox.style.backgroundColor = '#f8d7da';
+            alertBox.style.border = '1px solid #f5c6cb';
+            alertBox.style.color = '#721c24';
+            alertBox.style.borderRadius = '5px';
+            document.body.appendChild(alertBox);
+
+            setTimeout(() => {
+                alertBox.remove();
+            }, 3000);
+
+            document.addEventListener('click', function handler() {
+                alertBox.remove();
+                document.removeEventListener('click', handler);
+            });
+        }
+
+        function itemDetails(menuItemId) {
+            window.location.href = '@Url.Action("Details", "Menu")' + '/' + menuItemId;
         }
     </script>
 }

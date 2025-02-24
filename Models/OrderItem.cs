@@ -14,9 +14,11 @@ public partial class OrderItem
     public int? MenuItemId { get; set; }
 
     [Required]
+    [Range(1, 10)]
     public int? Quantity { get; set; }
 
     [Required]
+    [Range(1, 100)]
     public decimal? Price { get; set; }
 
     public DateTime? CreatedAt { get; set; }

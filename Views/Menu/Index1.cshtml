@@ -1,0 +1,36 @@
+﻿@model IEnumerable<PRN222_Lab5.Models.MenuItem>
+
+@{
+    ViewData["Title"] = "Menu";
+}
+
+<h2>Menu</h2>
+<div>
+    @foreach (var item in Model)
+    {
+        <div>
+            <h3>@item.Name</h3>
+            <p>@item.Description</p>
+            <p>Price: @String.Format("{0:C}", item.Price)</p>
+            <button onclick="addToCart(@item.MenuItemId)">Add to Cart</button>
+        </div>
+    }
+</div>
+
+@section Scripts {
+    <script>
+        function addToCart(menuItemId) {
+            $.ajax({
+                url: '@Url.Action("AddToCart", "Cart")',
+                type: 'POST',
+                data: { id: menuItemId },
+                success: function (response) {
+                    alert('Item added to cart!');
+                },
+                error: function (error) {
+                    alert('Error adding item to cart.');
+                }
+            });
+        }
+    </script>
+}
