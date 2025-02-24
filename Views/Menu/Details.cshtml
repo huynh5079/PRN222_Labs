@@ -1,0 +1,28 @@
+﻿@model PRN222_Lab5.Models.MenuItem
+
+@{
+    ViewData["Title"] = "Menu Item Details";
+}
+
+<h2>@Model.Name</h2>
+<p>@Model.Description</p>
+<p>Price: @Model.Price</p>
+<button onclick="addToCart(@Model.MenuItemId)">Add to Cart</button>
+
+@section Scripts {
+    <script>
+        function addToCart(menuItemId) {
+            $.ajax({
+                url: '@Url.Action("AddToCart", "Cart")',
+                type: 'POST',
+                data: { id: menuItemId },
+                success: function (response) {
+                    alert('Item added to cart!');
+                },
+                error: function (error) {
+                    alert('Error adding item to cart.');
+                }
+            });
+        }
+    </script>
+}

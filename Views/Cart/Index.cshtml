@@ -1,0 +1,62 @@
+﻿@model List<ShopeeFoodWebApp.Models.MenuItem>
+
+@{
+    ViewData["Title"] = "Cart";
+}
+
+<h2>Your Cart</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Subtotal</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody id="cartItems">
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.Description</td>
+                <td>@item.Price.ToString("C")</td>
+                <td>
+                    <input type="number" value="1" min="1" onchange="updateCartTotal()" />
+                </td>
+                <td class="subtotal">@item.Price.ToString("C")</td>
+                <td>
+                    <button onclick="removeFromCart(@item.MenuItemID)">Remove</button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<h3>Total: <span id="cartTotal"></span></h3>
+
+@section Scripts {
+    <script>
+        function updateCartTotal() {
+            let total = 0;
+            document.querySelectorAll('#cartItems tr').forEach(row => {
+                const price = parseFloat(row.querySelector('td:nth-child(3)').innerText.replace('$', ''));
+                const quantity = parseInt(row.querySelector('input').value);
+                const subtotal = price * quantity;
+                row.querySelector('.subtotal').innerText = '$' + subtotal.toFixed(2);
+                total += subtotal;
+            });
+            document.getElementById('cartTotal').innerText = '$' + total.toFixed(2);
+        }
+
+        function removeFromCart(menuItemId) {
+            // Logic to remove item from cart
+            console.log('Removing item with ID: ' + menuItemId);
+        }
+
+        // Initialize cart total on page load
+        updateCartTotal();
+    </script>
+}
