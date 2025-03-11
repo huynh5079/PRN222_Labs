@@ -1,0 +1,7 @@
+﻿@DemoSignalR_HostAddress = https://localhost:7014
+
+@username=user
+@password=123456
+POST {{DemoSignalR_HostAddress}}/login/login/{id}?username={{username}}&password={{password}}
+
+###

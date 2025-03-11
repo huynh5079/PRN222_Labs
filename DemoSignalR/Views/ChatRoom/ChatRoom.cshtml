@@ -1,0 +1,44 @@
+﻿@model List<DemoSignalR.Models.Entities.Message>
+
+@{
+    ViewData["Title"] = "Chat Room";
+}
+
+<h2>Chat Room</h2>
+
+<!-- Message List -->
+<div id="chatMessages" class="border p-3 mb-3" style="height: 300px; overflow-y: scroll;">
+    @foreach (var message in Model)
+    {
+        <p><strong>@message.SenderId:</strong> @message.Content</p>
+    }
+</div>
+
+<!-- Message Input -->
+<form id="sendMessageForm">
+    <input type="hidden" id="roomId" value="@ViewData["RoomId"]" />
+    <input type="text" id="messageInput" class="form-control" placeholder="Type a message...">
+    <button id="sendButton" class="btn btn-primary mt-2">Send</button>
+</form>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/7.0.5/signalr.min.js"></script>
+<script>
+    var connection = new signalR.HubConnectionBuilder().withUrl("/chatHub").build();
+
+    connection.start().then(function () {
+        console.log("Connected to SignalR");
+    });
+
+    connection.on("ReceiveMessage", function (user, message) {
+        var chatDiv = document.getElementById("chatMessages");
+        chatDiv.innerHTML += `<p><strong>${user}:</strong> ${message}</p>`;
+        chatDiv.scrollTop = chatDiv.scrollHeight;
+    });
+
+    document.getElementById("sendButton").addEventListener("click", function () {
+        var roomId = document.getElementById("roomId").value;
+        var message = document.getElementById("messageInput").value;
+        sendMessage(roomId, message);
+        document.getElementById("messageInput").value = "";
+    });
+</script>

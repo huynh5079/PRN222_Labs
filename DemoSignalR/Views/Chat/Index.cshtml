@@ -1,0 +1,27 @@
+﻿@model List<DemoSignalR.Models.Entities.User>
+
+@{
+    ViewData["Title"] = "Chat";
+}
+
+<h2>Chat</h2>
+
+<!-- Search Bar -->
+<form method="get" action="@Url.Action("Index", "Chat")">
+    <input type="text" name="search" placeholder="Search user..." class="form-control" />
+    <button type="submit" class="btn btn-primary mt-2">Search</button>
+</form>
+
+<!-- User List -->
+<ul class="list-group mt-3">
+    @foreach (var user in Model)
+    {
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            @user.Username
+            <form method="post" action="@Url.Action("CreateOrJoinRoom", "Chat")">
+                <input type="hidden" name="userId" value="@user.UserId" />
+                <button type="submit" class="btn btn-success">Room</button>
+            </form>
+        </li>
+    }
+</ul>
